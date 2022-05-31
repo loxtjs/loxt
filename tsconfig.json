@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"moduleResolution": "Node",
+		"esModuleInterop": true,
+		"declaration": true,
+		"rootDir": "./src",
+		"outDir": ".",
+		"target": "ES6",
+		"skipLibCheck": true
+	},
+	"include": ["src/**/*.ts"],
+	"exclude": []
+}
