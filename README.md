@@ -1,6 +1,6 @@
 # Loxt
 
-[![Node.js Package](https://github.com/AngelNext/loxt/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/AngelNext/loxt/actions/workflows/npm-publish.yml)
+[![Node.js CI](https://github.com/AngelNext/loxt/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/AngelNext/loxt/actions/workflows/npm-publish.yml)
 
 ## How it works?
 
