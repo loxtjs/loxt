@@ -1,37 +1,39 @@
 # Loxt
 
+[![Node.js Package](https://github.com/AngelNext/loxt/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/AngelNext/loxt/actions/workflows/npm-publish.yml)
+
 ## How it works?
 
 Loxt is a simple and easy console logger of 2kb in size with 0 external dependencies.
 
 ```js
-import { Loxt } from "loxt";
+import { Loxt } from 'loxt';
 
 const loxt = new Loxt();
 
-loxt.start("Some code...");
-loxt.ready("Initialization code, whatever...");
-loxt.info("Loxt is easy to use!");
-loxt.warn("You can use colors!");
-loxt.error("Create your own themes!");
-loxt.success("You can use themes from other people too!");
-loxt.start("My Amazing App!")
+loxt.start('Some code...');
+loxt.ready('Initialization code, whatever...');
+loxt.info('Loxt is easy to use!');
+loxt.warn('You can use colors!');
+loxt.error('Create your own themes!');
+loxt.success('You can use themes from other people too!');
+loxt.start('My Amazing App!');
 ```
 
 You can also use it with the commonjs syntax:
 
 ```js
-const { Loxt } = require("loxt");
+const { Loxt } = require('loxt');
 
 const loxt = new Loxt();
 
-loxt.start("Some code...");
-loxt.ready("Initialization code, whatever...");
-loxt.info("Loxt is easy to use!");
-loxt.warn("You can use colors!");
-loxt.error("Create your own themes!");
-loxt.success("You can use themes from other people too!");
-loxt.start("My Amazing App!")
+loxt.start('Some code...');
+loxt.ready('Initialization code, whatever...');
+loxt.info('Loxt is easy to use!');
+loxt.warn('You can use colors!');
+loxt.error('Create your own themes!');
+loxt.success('You can use themes from other people too!');
+loxt.start('My Amazing App!');
 ```
 
 ## Reporters
@@ -39,10 +41,10 @@ loxt.start("My Amazing App!")
 You can also use custom reporters that theme your logs:
 
 ```js
-import { Loxt, salmon } from "loxt";
+import { Loxt, salmon } from 'loxt';
 
 const loxt = new Loxt({
-	reporter: salmon
+	reporter: salmon,
 });
 
 // ...
@@ -66,7 +68,7 @@ const salmon = new Reporter({
 If you need to create reporters with more complex logic, just create a class that extends the `Reporter` class:
 
 ```js
-import { Reporter } from "loxt";
+import { Reporter } from 'loxt';
 
 export class Salmon extends Reporter {
 	get info() {
