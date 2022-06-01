@@ -34,9 +34,9 @@ export class Loxt {
 
 	error(error: unknown): void {
 		if (error instanceof Error) {
-			const err = new Error(Loxt.format(this.reporter.errMsg, error.message));
-			err.name = Loxt.format(this.reporter.errTitle, error.name);
-			console.error(err);
+			error.name = Loxt.format(this.reporter.errTitle, error.name);
+			error.message = Loxt.format(this.reporter.errMsg, error.message);
+			console.error(error);
 		} else {
 			console.error(Loxt.format(this.reporter.error, this.reporter.errTitle, Loxt.format(this.reporter.errMsg, error)));
 		}
