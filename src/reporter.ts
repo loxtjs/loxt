@@ -8,7 +8,18 @@ export class Reporter {
 	#errTitle: string;
 	#errMsg: string;
 
-	constructor(opts?: { info: string; warn: string; ready: string; start: string; success: string; error: string; errTitle: string; errMsg: string }) {
+	constructor(
+		opts: { info: string; warn: string; ready: string; start: string; success: string; error: string; errTitle: string; errMsg: string } = {
+			info: '%s',
+			warn: '%s',
+			ready: '%s',
+			start: '%s',
+			success: '%s',
+			error: '$1',
+			errTitle: '%s',
+			errMsg: '%s',
+		}
+	) {
 		this.#info = opts.info;
 		this.#warn = opts.warn;
 		this.#ready = opts.ready;

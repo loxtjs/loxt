@@ -8,8 +8,8 @@ export class Loxt {
 		this.reporter = options?.reporter ?? salmon;
 	}
 
-	static format(theme: string, ...messages: unknown[]): string {
-		return theme.replace(/%s|\$0/g, `${messages[0]}`).replace(/\$1/g, `${messages[1]}`);
+	static format(reporter: string, ...messages: unknown[]): string {
+		return reporter.replace(/%s|\$0/g, `${messages[0]}`).replace(/\$1/g, `${messages[1]}`);
 	}
 
 	success(message: unknown): void {

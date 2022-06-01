@@ -1,6 +1,6 @@
 {
 	"name": "loxt",
-	"version": "2.5.0",
+	"version": "2.5.1",
 	"description": "Loxt is a simple and easy console logger of less than 1kb in size with 0 dependencies.",
 	"main": "index.js",
 	"scripts": {
