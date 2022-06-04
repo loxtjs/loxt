@@ -54,14 +54,14 @@ You can also create your own reporters:
 
 ```js
 const salmon = new Reporter({
-	info: '\x1b[34m\x1b[1minfo\x1b[0m: \x1b[2m%s\x1b[0m',
-	warn: '\x1b[33m\x1b[1mwarn\x1b[0m: \x1b[2m%s\x1b[0m',
-	ready: '\x1b[32mready\x1b[0m \x1b[2m%s\x1b[0m',
-	start: '\x1b[32mstart\x1b[0m \x1b[2m%s\x1b[0m',
-	success: '\x1b[32m\x1b[1msuccess\x1b[0m: \x1b[2m%s\x1b[0m',
+	info: '\x1b[34m\x1b[1minfo\x1b[0m: \x1b[2m$0\x1b[0m',
+	warn: '\x1b[33m\x1b[1mwarn\x1b[0m: \x1b[2m$0\x1b[0m',
+	ready: '\x1b[32mready\x1b[0m \x1b[2m$0\x1b[0m',
+	start: '\x1b[32mstart\x1b[0m \x1b[2m$0\x1b[0m',
+	success: '\x1b[32m\x1b[1msuccess\x1b[0m: \x1b[2m$0\x1b[0m',
 	error: '$0: $1',
 	errTitle: '\x1b[31m\x1b[1merror\x1b[0m',
-	errMsg: '\x1b[2m%s\x1b[0m',
+	errMsg: '\x1b[2m$0\x1b[0m',
 });
 ```
 
@@ -72,23 +72,23 @@ import { Reporter } from 'loxt';
 
 export class Salmon extends Reporter {
 	get info() {
-		return `\x1b[34m\x1b[1minfo\x1b[0m: \x1b[2m%s\x1b[0m`;
+		return `\x1b[34m\x1b[1minfo\x1b[0m: \x1b[2m$0\x1b[0m`;
 	}
 
 	get warn() {
-		return `\x1b[33m\x1b[1mwarn\x1b[0m: \x1b[2m%s\x1b[0m`;
+		return `\x1b[33m\x1b[1mwarn\x1b[0m: \x1b[2m$0\x1b[0m`;
 	}
 
 	get ready() {
-		return `\x1b[32mready\x1b[0m \x1b[2m%s\x1b[0m`;
+		return `\x1b[32mready\x1b[0m \x1b[2m$0\x1b[0m`;
 	}
 
 	get start() {
-		return `\x1b[32mstart\x1b[0m \x1b[2m%s\x1b[0m`;
+		return `\x1b[32mstart\x1b[0m \x1b[2m$0\x1b[0m`;
 	}
 
 	get success() {
-		return `\x1b[32m\x1b[1msuccess\x1b[0m: \x1b[2m%s\x1b[0m`;
+		return `\x1b[32m\x1b[1msuccess\x1b[0m: \x1b[2m$0\x1b[0m`;
 	}
 
 	get error() {
@@ -100,7 +100,7 @@ export class Salmon extends Reporter {
 	}
 
 	get errMsg() {
-		return `\x1b[2m%s\x1b[0m`;
+		return `\x1b[2m$0\x1b[0m`;
 	}
 }
 ```
