@@ -2,7 +2,7 @@ import { Loxt } from '../src';
 
 describe('reporter', () => {
 	it('should format', () => {
-		expect(Loxt.format('%s', 'test')).toBe('test');
+		expect(Loxt.format('$0', 'test')).toBe('test');
 		expect(Loxt.format('$0: $1', 'test', 'test2')).toBe('test: test2');
 	});
 });
