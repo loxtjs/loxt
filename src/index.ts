@@ -1,15 +1,26 @@
-import { salmon, Reporter } from './reporter';
-export { salmon, Reporter };
+import { Reporter } from './reporter';
+export { Reporter };
 
 export class Loxt {
 	reporter: Reporter;
 
 	constructor(options?: { reporter: Reporter }) {
-		this.reporter = options?.reporter ?? salmon;
+		this.reporter =
+			options?.reporter ??
+			new Reporter({
+				info: '\x1b[34m\x1b[1minfo\x1b[0m: \x1b[2m$0\x1b[0m',
+				warn: '\x1b[33m\x1b[1mwarn\x1b[0m: \x1b[2m$0\x1b[0m',
+				ready: '\x1b[32mready\x1b[0m \x1b[2m$0\x1b[0m',
+				start: '\x1b[32mstart\x1b[0m \x1b[2m$0\x1b[0m',
+				success: '\x1b[32m\x1b[1msuccess\x1b[0m: \x1b[2m%s\x1b[0m',
+				error: '$0: $1',
+				errTitle: '\x1b[31m\x1b[1merror\x1b[0m',
+				errMsg: '\x1b[2m$0\x1b[0m',
+			});
 	}
 
 	static format(str: string, ...messages: unknown[]): string {
-		return str.replace(/%s|\$0/, `${messages[0]}`).replace('$1', `${messages[1]}`);
+		return str.replaceAll('$0', `${messages[0]}`).replaceAll('$1', `${messages[1]}`);
 	}
 
 	success(message: unknown): void {
@@ -33,13 +44,11 @@ export class Loxt {
 	}
 
 	error(error: unknown): void {
-		if (error instanceof Error) {
-			error.name = Loxt.format(this.reporter.errTitle, error.name);
-			error.message = Loxt.format(this.reporter.errMsg, error.message);
-			console.error(error);
-		} else {
-			console.error(Loxt.format(this.reporter.error, this.reporter.errTitle, Loxt.format(this.reporter.errMsg, error)));
-		}
+		if (!(error instanceof Error))
+			return console.error(Loxt.format(this.reporter.error, this.reporter.errTitle, Loxt.format(this.reporter.errMsg, error)));
+		error.name = Loxt.format(this.reporter.errTitle, error.name);
+		error.message = Loxt.format(this.reporter.errMsg, error.message);
+		console.error(error);
 	}
 
 	log(message: unknown): void {
