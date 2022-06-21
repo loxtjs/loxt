@@ -5,10 +5,9 @@
 		"esModuleInterop": true,
 		"declaration": true,
 		"rootDir": "./src",
-		"outDir": ".",
 		"target": "ES6",
+		"outDir": "dist",
 		"skipLibCheck": true
 	},
-	"include": ["src/**/*.ts"],
-	"exclude": []
+	"exclude": ["test", "dist"]
 }

@@ -1,3 +1,9 @@
+<img 
+	src="https://cdn.discordapp.com/attachments/968151394488057916/988146558560260196/Loxt.png" height="200" 
+	width="200" 
+	style="border-radius: 10%" 
+/>
+
 # Loxt
 
 [![Node.js CI](https://github.com/AngelNext/loxt/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/AngelNext/loxt/actions/workflows/npm-publish.yml)
@@ -37,18 +43,6 @@ loxt.start('My Amazing App!');
 ```
 
 ## Reporters
-
-You can also use custom reporters that theme your logs:
-
-```js
-import { Loxt, salmon } from 'loxt';
-
-const loxt = new Loxt({
-	reporter: salmon,
-});
-
-// ...
-```
 
 You can also create your own reporters:
 

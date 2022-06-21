@@ -1,6 +1,6 @@
 {
 	"name": "loxt",
-	"version": "2.5.6",
+	"version": "2.5.7",
 	"description": "Loxt is a simple and easy console logger of less than 1kb in size with 0 dependencies.",
 	"repository": {
 		"type": "git",
@@ -13,7 +13,7 @@
 	},
 	"main": "index.js",
 	"scripts": {
-		"build": "esbuild --minify --bundle --outfile=index.js --tsconfig=tsconfig.json --format=cjs src/index.ts && tsc --emitDeclarationOnly && esbuild --minify --bundle --outfile=es/index.js --tsconfig=tsconfig.json --format=esm src/index.ts && tsc --emitDeclarationOnly && tsc --emitDeclarationOnly --declarationDir es",
+		"build": "esbuild --minify --bundle --outfile=dist/cjs/index.js --tsconfig=tsconfig.json --format=cjs src/index.ts && esbuild --minify --bundle --outfile=dist/esm/index.js --tsconfig=tsconfig.json --format=esm src/index.ts && tsc --emitDeclarationOnly",
 		"test": "jest"
 	},
 	"keywords": [
@@ -36,8 +36,8 @@
 	},
 	"exports": {
 		".": {
-			"import": "./es/index.js",
-			"require": "./index.js"
+			"import": "./dist/esm/index.js",
+			"require": "./dist/cjs/index.js"
 		}
 	}
 }

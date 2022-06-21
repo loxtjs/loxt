@@ -9,17 +9,6 @@ interface ReportOpts {
 	errMsg: string;
 }
 
-const defaultOpts: Readonly<ReportOpts> = Object.freeze({
-	info: '$0',
-	warn: '$0',
-	ready: '$0',
-	start: '$0',
-	success: '$0',
-	error: '$1',
-	errTitle: '$0',
-	errMsg: '$0',
-});
-
 export class Reporter {
 	#info: string;
 	#warn: string;
@@ -30,7 +19,18 @@ export class Reporter {
 	#errTitle: string;
 	#errMsg: string;
 
-	constructor(opts = defaultOpts) {
+	constructor(
+		opts = Object.freeze<ReportOpts>({
+			info: '$0',
+			warn: '$0',
+			ready: '$0',
+			start: '$0',
+			success: '$0',
+			error: '$1',
+			errTitle: '$0',
+			errMsg: '$0',
+		})
+	) {
 		this.#info = opts.info;
 		this.#warn = opts.warn;
 		this.#ready = opts.ready;
