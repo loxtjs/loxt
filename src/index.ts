@@ -3,16 +3,18 @@ export { Reporter };
 
 export class Loxt {
 	constructor(
-		public reporter: Reporter = new Reporter({
-			info: '\x1b[34m\x1b[1minfo\x1b[0m: \x1b[2m$0\x1b[0m',
-			warn: '\x1b[33m\x1b[1mwarn\x1b[0m: \x1b[2m$0\x1b[0m',
-			ready: '\x1b[32mready\x1b[0m \x1b[2m$0\x1b[0m',
-			start: '\x1b[32mstart\x1b[0m \x1b[2m$0\x1b[0m',
-			success: '\x1b[32m\x1b[1msuccess\x1b[0m: \x1b[2m$0\x1b[0m',
-			error: '$0: $1',
-			errTitle: '\x1b[31m\x1b[1merror\x1b[0m',
-			errMsg: '\x1b[2m$0\x1b[0m',
-		})
+		public reporter = new Reporter(
+			Object.freeze({
+				info: '\x1b[34m\x1b[1minfo\x1b[0m: \x1b[2m$0\x1b[0m',
+				warn: '\x1b[33m\x1b[1mwarn\x1b[0m: \x1b[2m$0\x1b[0m',
+				ready: '\x1b[32mready\x1b[0m \x1b[2m$0\x1b[0m',
+				start: '\x1b[32mstart\x1b[0m \x1b[2m$0\x1b[0m',
+				success: '\x1b[32m\x1b[1msuccess\x1b[0m: \x1b[2m$0\x1b[0m',
+				error: '$0: $1',
+				errTitle: '\x1b[31m\x1b[1merror\x1b[0m',
+				errMsg: '\x1b[2m$0\x1b[0m',
+			})
+		)
 	) {}
 
 	success(message: unknown): void {

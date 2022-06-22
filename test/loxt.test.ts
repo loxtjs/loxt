@@ -7,7 +7,7 @@ describe('Reporter should format strings', () => {
 	}
 
 	it('should format single string', () => {
-		expect(Loxt.format('$0', Tests.FIRST)).toBe(Tests.FIRST);
+		expect(Loxt.format('$0', Tests.FIRST)).toBe(Tests.FIRST.toString());
 	});
 
 	it('should format multiple strings', () => {
