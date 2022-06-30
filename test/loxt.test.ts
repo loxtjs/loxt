@@ -1,17 +1,15 @@
-import { Loxt } from '../src';
+import { Loxt, format } from '../src';
+import { randomUUID } from 'node:crypto';
+
+const TEST = randomUUID();
 
 describe('Reporter should format strings', () => {
-	enum Tests {
-		FIRST,
-		SECOND,
-	}
-
 	it('should format single string', () => {
-		expect(Loxt.format('$0', Tests.FIRST)).toBe(Tests.FIRST.toString());
+		expect(format('$0', TEST)).toBe(TEST.toString());
 	});
 
 	it('should format multiple strings', () => {
-		expect(Loxt.format('$0: $1', Tests.FIRST, Tests.SECOND)).toBe(`${Tests.FIRST}: ${Tests.SECOND}`);
+		expect(format('$0: $1', TEST, TEST)).toBe(`${TEST}: ${TEST}`);
 	});
 });
 
@@ -20,36 +18,35 @@ describe('Logging should use the correct reporter', () => {
 	const spyLog = jest.spyOn(console, 'log');
 	const spyWarn = jest.spyOn(console, 'warn');
 	const spyError = jest.spyOn(console, 'error');
-	const TEST = 'test';
 
 	it('should log info', () => {
 		loxt.info(TEST);
-		expect(spyLog).toHaveBeenCalledWith(Loxt.format(loxt.reporter.info, TEST));
+		expect(spyLog).toHaveBeenCalledWith(format(loxt.reporter.info, TEST));
 	});
 
 	it('should log success', () => {
 		loxt.success(TEST);
-		expect(spyLog).toHaveBeenCalledWith(Loxt.format(loxt.reporter.success, TEST));
+		expect(spyLog).toHaveBeenCalledWith(format(loxt.reporter.success, TEST));
 	});
 
 	it('should log warn', () => {
 		loxt.warn(TEST);
-		expect(spyWarn).toHaveBeenCalledWith(Loxt.format(loxt.reporter.warn, TEST));
+		expect(spyWarn).toHaveBeenCalledWith(format(loxt.reporter.warn, TEST));
 	});
 
 	it('should log error', () => {
 		loxt.error(TEST);
-		expect(spyError).toHaveBeenCalledWith(Loxt.format(loxt.reporter.error, loxt.reporter.errTitle, Loxt.format(loxt.reporter.errMsg, TEST)));
+		expect(spyError).toHaveBeenCalledWith(format(loxt.reporter.error, loxt.reporter.errTitle, format(loxt.reporter.errMsg, TEST)));
 	});
 
 	it('should log ready', () => {
 		loxt.ready(TEST);
-		expect(spyLog).toHaveBeenCalledWith(Loxt.format(loxt.reporter.ready, TEST));
+		expect(spyLog).toHaveBeenCalledWith(format(loxt.reporter.ready, TEST));
 	});
 
 	it('should log start', () => {
 		loxt.start(TEST);
-		expect(spyLog).toHaveBeenCalledWith(Loxt.format(loxt.reporter.start, TEST));
+		expect(spyLog).toHaveBeenCalledWith(format(loxt.reporter.start, TEST));
 	});
 });
 

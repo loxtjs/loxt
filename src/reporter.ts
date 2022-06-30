@@ -19,18 +19,7 @@ export class Reporter {
 	#errTitle: string;
 	#errMsg: string;
 
-	constructor(
-		opts = Object.freeze<ReportOpts>({
-			info: '$0',
-			warn: '$0',
-			ready: '$0',
-			start: '$0',
-			success: '$0',
-			error: '$1',
-			errTitle: '$0',
-			errMsg: '$0',
-		})
-	) {
+	constructor(opts: ReportOpts) {
 		this.#info = opts.info;
 		this.#warn = opts.warn;
 		this.#ready = opts.ready;
