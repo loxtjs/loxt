@@ -103,8 +103,10 @@ export class Loxt {
 	}
 
 	error(error: unknown): void {
-		if (!(error instanceof Error))
-			return console.error(Loxt.format(this.reporter.error, this.reporter.errTitle, Loxt.format(this.reporter.errMsg, error)));
+		if (!(error instanceof Error)) {
+			console.error(Loxt.format(this.reporter.error, this.reporter.errTitle, Loxt.format(this.reporter.errMsg, error)));
+			return;
+		}
 		error.name = Loxt.format(this.reporter.errTitle, error.name);
 		error.message = Loxt.format(this.reporter.errMsg, error.message);
 		console.error(error);
