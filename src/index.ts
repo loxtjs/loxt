@@ -1,11 +1,72 @@
-import { Reporter } from './reporter';
-export { Reporter };
-
 /** Alias to Loxt.format()
  * @param str
  * @param messages
  */
 export const format = (str: string, ...messages: unknown[]) => Loxt.format(str, ...messages);
+
+export interface ReportOpts {
+	info: string;
+	warn: string;
+	ready: string;
+	start: string;
+	success: string;
+	error: string;
+	errTitle: string;
+	errMsg: string;
+}
+
+export class Reporter {
+	#info: string;
+	#warn: string;
+	#ready: string;
+	#start: string;
+	#success: string;
+	#error: string;
+	#errTitle: string;
+	#errMsg: string;
+
+	constructor(opts: ReportOpts) {
+		this.#info = opts.info;
+		this.#warn = opts.warn;
+		this.#ready = opts.ready;
+		this.#start = opts.start;
+		this.#success = opts.success;
+		this.#error = opts.error;
+		this.#errTitle = opts.errTitle;
+		this.#errMsg = opts.errMsg;
+	}
+
+	get info(): string {
+		return this.#info;
+	}
+
+	get warn(): string {
+		return this.#warn;
+	}
+
+	get ready(): string {
+		return this.#ready;
+	}
+
+	get start(): string {
+		return this.#start;
+	}
+
+	get success(): string {
+		return this.#success;
+	}
+
+	get error(): string {
+		return this.#error;
+	}
+
+	get errTitle(): string {
+		return this.#errTitle;
+	}
+	get errMsg(): string {
+		return this.#errMsg;
+	}
+}
 
 export class Loxt {
 	constructor(
@@ -65,6 +126,10 @@ export class Loxt {
 		console.log(message);
 	}
 
+	/** Format the `$0` and `$1` placeholders in the string.
+	 * @param str
+	 * @param messages
+	 */
 	static format(str: string, ...messages: unknown[]): string {
 		return str.replaceAll('$0', `${messages[0]}`).replaceAll('$1', `${messages[1]}`);
 	}

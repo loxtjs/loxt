@@ -4,9 +4,10 @@
 		"lib": ["ES2022", "DOM"],
 		"esModuleInterop": true,
 		"declaration": true,
+		"emitDeclarationOnly": true,
 		"rootDir": "./src",
-		"target": "ES6",
-		"outDir": "dist",
+		"outDir": ".",
+		"target": "ES2016",
 		"skipLibCheck": true
 	},
 	"exclude": ["test", "dist"]
