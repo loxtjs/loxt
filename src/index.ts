@@ -132,7 +132,7 @@ export class Loxt {
 	 * @param str
 	 * @param messages
 	 */
-	static format(str: string, ...messages: unknown[]): string {
-		return str.replaceAll('$0', `${messages[0]}`).replaceAll('$1', `${messages[1]}`);
+	static format(str: string, ...[first, second]: unknown[]): string {
+		return str.replaceAll('$0', `${first}`).replaceAll('$1', `${second}`);
 	}
 }
