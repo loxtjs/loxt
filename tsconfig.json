@@ -1,13 +1,13 @@
 {
 	"compilerOptions": {
 		"moduleResolution": "Node",
-		"lib": ["ES2022", "DOM"],
+		"lib": ["ES2022"],
 		"esModuleInterop": true,
 		"declaration": true,
 		"emitDeclarationOnly": true,
 		"rootDir": "./src",
 		"outDir": ".",
-		"target": "ES2016",
+		"target": "ES6",
 		"skipLibCheck": true
 	},
 	"exclude": ["test", "dist"]

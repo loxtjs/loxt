@@ -1,15 +1,10 @@
 import { Loxt, format } from '../src';
-import { randomUUID } from 'node:crypto';
 
-const TEST = randomUUID();
+const TEST = 'message for the test';
 
 describe('Reporter should format strings', () => {
-	it('should format single string', () => {
-		expect(format('$0', TEST)).toBe(TEST.toString());
-	});
-
-	it('should format multiple strings', () => {
-		expect(format('$0: $1', TEST, TEST)).toBe(`${TEST}: ${TEST}`);
+	it('should format string', () => {
+		expect(format('$message', TEST)).toBe(TEST);
 	});
 });
 
@@ -36,7 +31,8 @@ describe('Logging should use the correct reporter', () => {
 
 	it('should log error', () => {
 		loxt.error(TEST);
-		expect(spyError).toHaveBeenCalledWith(format(loxt.reporter.error, loxt.reporter.errTitle, format(loxt.reporter.errMsg, TEST)));
+		const { name, message } = loxt.reporter.error;
+		expect(spyError).toHaveBeenCalledWith(`${format(name, 'error')}: ${format(message, TEST)}`);
 	});
 
 	it('should log ready', () => {
