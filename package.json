@@ -1,7 +1,7 @@
 {
 	"name": "loxt",
-	"version": "3.0.0",
-	"description": "Loxt is a simple and easy console logger of less than 1kb in size with 0 dependencies.",
+	"version": "3.0.1",
+	"description": "Loxt is a simple and lightweight console logger with 0 external dependencies.",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/AngelNext/loxt.git"
