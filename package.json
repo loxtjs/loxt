@@ -1,6 +1,6 @@
 {
 	"name": "loxt",
-	"version": "3.1.0",
+	"version": "3.2.0",
 	"description": "Loxt is a simple and lightweight console logger with 0 external dependencies.",
 	"repository": {
 		"type": "git",
@@ -11,8 +11,9 @@
 		"url": "https://github.com/AngelNext/loxt/issues",
 		"email": "contact@angelnext.dev"
 	},
+	"types": "mod.d.ts",
 	"scripts": {
-		"build": "esbuild --minify --bundle --format=cjs --outfile=dist/index.cjs src/index.ts && esbuild --minify --bundle --format=esm --outfile=dist/index.mjs src/index.ts && tsc",
+		"build": "esbuild --minify --bundle --format=cjs --outfile=dist/index.cjs src/mod.ts && esbuild --minify --bundle --format=esm --outfile=dist/index.mjs src/mod.ts && tsc",
 		"test": "jest"
 	},
 	"keywords": [

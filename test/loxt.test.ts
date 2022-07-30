@@ -1,4 +1,4 @@
-import { Loxt, format } from '../src';
+import { Loxt, format } from '../src/mod';
 
 const TEST = 'message for the test';
 
