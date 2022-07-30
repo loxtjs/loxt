@@ -65,7 +65,7 @@ export interface ReportOptions {
 	ready: string;
 	start: string;
 	success: string;
-	error: ErrorOptions;
+	error?: ErrorOptions;
 }
 
 export class Reporter {
@@ -96,7 +96,12 @@ export class Reporter {
 	}
 
 	get error(): ErrorOptions {
-		return this.#options.error;
+		return (
+			this.#options.error ?? {
+				name: '$name',
+				message: '$message',
+			}
+		);
 	}
 }
 
