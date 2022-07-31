@@ -120,7 +120,7 @@ export class Loxt {
 	constructor(
 		public reporter = new Reporter({
 			info: `${bold(blue('info'))}: ${dim('$message')}`,
-			warn: `${bold(yellow('warn'))}: ${dim('$message')}`,
+			warn: `${bold(yellow('warning'))}: ${dim('$message')}`,
 			ready: `${green('ready')} ${dim('$message')}`,
 			start: `${green('start')} ${dim('$message')}`,
 			success: `${bold(green('success'))}: ${dim('$message')}`,
