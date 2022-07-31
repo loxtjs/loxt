@@ -193,4 +193,4 @@ export class Loxt {
 	}
 }
 
-export default new Loxt();
+export const loxt = new Loxt();
