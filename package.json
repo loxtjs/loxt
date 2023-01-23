@@ -1,6 +1,6 @@
 {
 	"name": "loxt",
-	"version": "3.4.0",
+	"version": "3.4.1",
 	"description": "Loxt is a simple and lightweight console logger with 0 external dependencies.",
 	"repository": {
 		"type": "git",
