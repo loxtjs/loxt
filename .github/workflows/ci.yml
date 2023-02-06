@@ -21,7 +21,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.32.2
+          version: 7.26.3
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
