@@ -4,10 +4,12 @@ importers:
 
   .:
     specifiers:
+      '@changesets/cli': ^2.26.0
       eslint-config-custom: workspace:*
       prettier: latest
       turbo: latest
     devDependencies:
+      '@changesets/cli': 2.26.0
       eslint-config-custom: link:packages/eslint-config-custom
       prettier: 2.8.3
       turbo: 1.7.3
@@ -37,7 +39,6 @@ importers:
 
   packages/colors:
     specifiers:
-      '@changesets/cli': ^2.26.0
       '@vitest/coverage-c8': ^0.28.4
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
@@ -46,7 +47,6 @@ importers:
       typescript: ^4.5.2
       vitest: ^0.28.4
     devDependencies:
-      '@changesets/cli': 2.26.0
       '@vitest/coverage-c8': 0.28.4
       eslint: 7.32.0
       eslint-config-custom: link:../eslint-config-custom
@@ -72,7 +72,6 @@ importers:
 
   packages/loxt:
     specifiers:
-      '@changesets/cli': ^2.26.0
       '@loxt/colors': workspace:*
       '@loxt/reporter': workspace:*
       '@types/node': ^18.11.19
@@ -87,7 +86,6 @@ importers:
       '@loxt/colors': link:../colors
       '@loxt/reporter': link:../reporter
     devDependencies:
-      '@changesets/cli': 2.26.0
       '@types/node': 18.11.19
       '@vitest/coverage-c8': 0.28.4
       eslint: 7.32.0
@@ -99,7 +97,6 @@ importers:
 
   packages/reporter:
     specifiers:
-      '@changesets/cli': ^2.26.0
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
       tsconfig: workspace:*
@@ -107,7 +104,6 @@ importers:
       typescript: ^4.5.2
       vitest: ^0.28.4
     devDependencies:
-      '@changesets/cli': 2.26.0
       eslint: 7.32.0
       eslint-config-custom: link:../eslint-config-custom
       tsconfig: link:../tsconfig
