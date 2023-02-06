@@ -11,6 +11,7 @@
 		"test": "turbo run test",
 		"dev": "turbo run dev",
 		"lint": "turbo run lint",
+		"release": "turbo run build lint test && changeset version && changeset publish",
 		"format": "prettier --write \"**/*.{ts,tsx,md}\""
 	},
 	"devDependencies": {
