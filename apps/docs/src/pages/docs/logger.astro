@@ -1,0 +1,30 @@
+---
+import Header from '../../components/Header.astro';
+import Layout from '../../layout/Layout.astro';
+import { Code } from 'astro/components';
+---
+
+<Layout title='Logger - Docs'>
+	<Header title='Logger' description="Loxt's main function is to help you log messages with style" />
+	<main class='mt-5 gap-5 grid justify-center'>
+		<p>To start using it create a instance of the Loxt class, and then call its various methods.</p>
+		<Code
+			wrap
+			lang='ts'
+			theme='one-dark-pro'
+			code={`
+	import Loxt from 'loxt';
+
+	const loxt = new Loxt();
+
+	loxt.start('Some code...');
+	loxt.ready('Initialization code, whatever...');
+	loxt.info('Loxt is easy to use!');     
+	loxt.warn('You can use colors!');      
+	loxt.error('Create your own themes!'); 
+	loxt.success('You can use themes from other people too!');
+	loxt.start('My Amazing App!');
+			`}
+		/>
+	</main>
+</Layout>

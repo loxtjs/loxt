@@ -1,0 +1,40 @@
+{
+	"name": "@loxt/reporter",
+	"version": "2.0.0",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		"import": "./dist/index.mjs",
+		"require": "./dist/index.js",
+		"types": "./dist/index.d.ts"
+	},
+	"contributors": [
+		"AngelNext <contact@angelnext.dev>"
+	],
+	"license": "MIT",
+	"scripts": {
+		"lint": "eslint src/*.ts*",
+		"build": "tsup src/index.ts --minify --format cjs --format esm --dts"
+	},
+	"directories": {
+		"lib": "src",
+		"test": "test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/loxtjs/loxt.git"
+	},
+	"bugs": {
+		"url": "https://github.com/loxtjs/loxt/issues"
+	},
+	"homepage": "https://loxt.angelnext.dev",
+	"devDependencies": {
+		"eslint": "^7.32.0",
+		"eslint-config-custom": "workspace:*",
+		"tsconfig": "workspace:*",
+		"tsup": "^6.5.0",
+		"typescript": "^4.5.2",
+		"vitest": "^0.28.4"
+	}
+}

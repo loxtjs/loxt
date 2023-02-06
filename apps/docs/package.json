@@ -1,0 +1,22 @@
+{
+	"name": "docs",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"lint": "eslint src/*.ts*"
+	},
+	"devDependencies": {
+		"@astrojs/prefetch": "^0.1.2",
+		"@astrojs/sitemap": "^1.0.1",
+		"@astrojs/tailwind": "^3.0.1",
+		"astro": "^2.0.6",
+		"tailwindcss": "^3.2.4",
+		"eslint-config-custom": "workspace:*",
+		"eslint": "8.33.0",
+		"tsconfig": "workspace:*"
+	}
+}

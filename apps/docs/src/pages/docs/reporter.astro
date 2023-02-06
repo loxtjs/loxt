@@ -1,0 +1,77 @@
+---
+import Header from '../../components/Header.astro';
+import Layout from '../../layout/Layout.astro';
+import { Code } from 'astro/components';
+---
+
+<Layout title='Reporter - Docs'>
+	<Header title='Reporter' description='Create your own themes to log the messages' />
+	<main class='mt-5 px-52 gap-5 grid justify-center'>
+		<p>
+			Reporters are basically an object, which has to be an instance of a superclass of the Reporter class, we will cover the different ways to create
+			a reporter and how to use it in our logger.
+		</p>
+		<Code
+			wrap
+			code={`
+	import { Reporter } from 'loxt';
+
+	const myReporter = new Reporter({
+		info: 'info: $message',
+		warn: 'warn: $message',
+		ready: 'ready $message',
+		start: 'start $message',
+		success: 'sucess: $message',
+		// This is error default 
+		error: {
+			name: '$name',
+			message: '$message',
+		}
+	});
+		`}
+			lang='ts'
+			theme='one-dark-pro'
+		/>
+		<p>
+			But maybe you must add some extra logic to the reporter, for that you can make a new class that extends the reporter class and add the right
+			getters. We call this class an Extension, as it extends our basic theme reporter and adds new functionality.
+		</p>
+		<Code
+			wrap
+			code={`
+	import { Reporter } from 'loxt';
+
+	class MyReporter extends Reporter {
+		get info() {
+			return 'info: $message';
+		}
+					
+		get warn() {
+			return 'warn: $message';
+		}
+					
+		get ready() {
+			return 'ready $message';
+		}
+					
+		get start() {
+			return 'start $message';
+		}
+					
+		get success() {
+			return 'success: $message';
+		}
+					
+		get error() {
+			return {
+				name: '$name'
+				message: '$message'
+			};
+		}
+	}
+		`}
+			lang='ts'
+			theme='one-dark-pro'
+		/>
+	</main>
+</Layout>

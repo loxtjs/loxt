@@ -1,0 +1,37 @@
+{
+	"name": "loxt",
+	"version": "3.4.2",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"license": "MIT",
+	"scripts": {
+		"lint": "eslint src/*.ts",
+		"build": "tsup src/index.ts --format cjs --format esm --dts"
+	},
+	"directories": {
+		"lib": "src",
+		"test": "test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/loxtjs/loxt.git"
+	},
+	"bugs": {
+		"url": "https://github.com/loxtjs/loxt/issues"
+	},
+	"homepage": "https://loxt.angelnext.dev",
+	"dependencies": {
+		"@loxt/colors": "workspace:*",
+		"@loxt/reporter": "workspace:*"
+	},
+	"devDependencies": {
+		"@vitest/coverage-c8": "^0.28.4",
+		"@types/node": "^18.11.19",
+		"eslint": "^7.32.0",
+		"eslint-config-custom": "workspace:*",
+		"tsconfig": "workspace:*",
+		"tsup": "^6.5.0",
+		"typescript": "^4.5.2",
+		"vitest": "^0.28.4"
+	}
+}
