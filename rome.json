@@ -1,0 +1,10 @@
+{
+	"formatter": {
+		"enabled": true,
+		"ignore": ["./**/*/node_modules/**/*.*", "./packages/**/*/coverage/*.*", "./**/*/dist/**/*.*"]
+	},
+	"linter": {
+		"enabled": true,
+		"ignore": ["./**/*/node_modules/**/*.*", "./packages/**/*/coverage/*.*", "./**/*/dist/**/*.*"]
+	}
+}

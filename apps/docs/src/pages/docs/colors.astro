@@ -1,0 +1,29 @@
+---
+import Header from '../../components/Header.astro';
+import Layout from '../../layout/Layout.astro';
+import { Code } from 'astro/components';
+---
+
+<Layout title='Colors - Docs'>
+	<Header
+		title='Colors'
+		description="Loxt doesn't just make it easier to add your own custom themes, it even makes easier the use of colors in the terminal, all in one module!"
+	/>
+
+	<main class='mt-5 gap-5 grid justify-center'>
+		<p>
+			The colors module has terminal colors, bold, dim, underlined, inverted, hidden and more. Since the methods return strings you can chain them.
+		</p>
+		<Code
+			wrap
+			code={`
+	import { Colors } from 'loxt';
+
+	const { underline, bold, red } = Colors
+	console.log(underline(bold(red('This is a text!'))))
+		`}
+			lang='ts'
+			theme='one-dark-pro'
+		/>
+	</main>
+</Layout>

@@ -1,0 +1,27 @@
+{
+	"name": "loxt",
+	"version": "1.0.0",
+	"private": true,
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"scripts": {
+		"build": "turbo run build",
+		"test": "turbo run test",
+		"dev": "turbo run dev",
+		"lint": "rome check .",
+		"release": "changeset version && changeset publish",
+		"format": "rome format --write ."
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.26.0",
+		"prettier": "latest",
+		"rome": "^11.0.0",
+		"turbo": "latest"
+	},
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"packageManager": "pnpm@7.26.3"
+}
