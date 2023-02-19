@@ -14,7 +14,6 @@
 	],
 	"license": "MIT",
 	"scripts": {
-		"lint": "eslint",
 		"test": "vitest run",
 		"test:watch": "vitest watch",
 		"build": "tsup src/index.ts --minify --format cjs --format esm --dts"
@@ -35,7 +34,6 @@
 	},
 	"homepage": "https://loxt.angelnext.dev",
 	"devDependencies": {
-		"eslint": "^7.32.0",
 		"tsconfig": "workspace:*",
 		"tsup": "^6.5.0",
 		"typescript": "^4.5.2",
