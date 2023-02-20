@@ -8,13 +8,12 @@ node_modules
 # testing
 coverage
 
-#output
+# output
 dist
 
 # misc
 .DS_Store
 *.pem
-desktop.ini
 
 # debug
 npm-debug.log*
