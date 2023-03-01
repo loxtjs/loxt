@@ -32,7 +32,7 @@
 		"@loxtjs/reporter": "workspace:*"
 	},
 	"devDependencies": {
-		"@vitest/coverage-c8": "^0.28.4",
+		"@vitest/coverage-c8": "^0.29.2",
 		"@types/node": "^18.11.19",
 		"tsconfig": "workspace:*",
 		"tsup": "^6.5.0",
