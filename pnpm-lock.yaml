@@ -14,7 +14,7 @@ importers:
 
   apps/docs:
     specifiers:
-      '@astrojs/prefetch': ^0.1.2
+      '@astrojs/prefetch': ^0.2.1
       '@astrojs/sitemap': ^1.0.1
       '@astrojs/tailwind': ^3.0.1
       astro: ^2.0.6
@@ -24,7 +24,7 @@ importers:
     dependencies:
       shiki: 0.14.0
     devDependencies:
-      '@astrojs/prefetch': 0.1.2
+      '@astrojs/prefetch': 0.2.1
       '@astrojs/sitemap': 1.0.1
       '@astrojs/tailwind': 3.0.1_jiulpwjund37q6yckwlgwo54mu
       astro: 2.0.6
@@ -140,8 +140,8 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/prefetch/0.1.2:
-    resolution: {integrity: sha512-Plf1GLKDyvTHjEKVMH922wc1AmvlFYvEXrbdaMAlgJuoqTRXirP1CennildFHndTetH8swWMlVGwxdG57dN7cA==}
+  /@astrojs/prefetch/0.2.1:
+    resolution: {integrity: sha512-kVDhUl0BzN/3D1NJL5ndgKK5Dk/mdSf5LinKrPIVVVND+hrdErkihV53sA3pyffdw488pFvAiFu2+LW/DWhiHA==}
     dependencies:
       throttles: 1.0.1
     dev: true
