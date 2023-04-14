@@ -1,7 +1,8 @@
-import { Colors } from "@loxtjs/colors";
+import { colors } from "@loxtjs/colors";
 import { Reporter } from "@loxtjs/reporter";
 
 /** @class Loxt class to create an instance of loxt */
+
 export class Loxt {
 	reporter: Reporter;
 
@@ -9,18 +10,18 @@ export class Loxt {
 		this.reporter =
 			reporter ??
 			new Reporter({
-				info: `${Colors.bold(Colors.blue("info"))}: ${Colors.dim("$message")}`,
-				warn: `${Colors.bold(Colors.yellow("warning"))}: ${Colors.dim(
+				info: `${colors.bold(colors.blue("info"))}: ${colors.dim("$message")}`,
+				warn: `${colors.bold(colors.yellow("warning"))}: ${colors.dim(
 					"$message",
 				)}`,
-				ready: `${Colors.green("ready")} ${Colors.dim("$message")}`,
-				start: `${Colors.green("start")} ${Colors.dim("$message")}`,
-				success: `${Colors.bold(Colors.green("success"))}: ${Colors.dim(
+				ready: `${colors.green("ready")} ${colors.dim("$message")}`,
+				start: `${colors.green("start")} ${colors.dim("$message")}`,
+				success: `${colors.bold(colors.green("success"))}: ${colors.dim(
 					"$message",
 				)}`,
 				error: {
-					name: Colors.bold(Colors.red("$name")),
-					message: Colors.dim("$message"),
+					name: colors.bold(colors.red("$name")),
+					message: colors.dim("$message"),
 				},
 			});
 	}
@@ -92,7 +93,7 @@ export class Loxt {
 
 	/** @returns a string representation of this instance */
 	toString(): string {
-		return `${Colors.magenta("class")} ${Colors.yellow(
+		return `${colors.magenta("class")} ${colors.yellow(
 			"Loxt",
 		)} { \x1b[31mreporter\x1b[0m: \x1b[33m${
 			this.reporter.constructor.name
@@ -101,9 +102,9 @@ export class Loxt {
 
 	/** @returns a string representation of this class */
 	static toString(): string {
-		return `${Colors.magenta("class")} ${Colors.yellow("Loxt")}(${Colors.red(
+		return `${colors.magenta("class")} ${colors.yellow("Loxt")}(${colors.red(
 			"reporter",
-		)}: ${Colors.yellow("Reporter")})`;
+		)}: ${colors.yellow("Reporter")})`;
 	}
 
 	/** @returns a new loxt instance with the same settings as this instance */
@@ -127,7 +128,7 @@ export class Loxt {
 	}
 }
 
-export { Colors, Reporter };
+export { colors, Reporter };
 
 /** Replaces the placeholder in the string with the provided message.
  * @param reporter

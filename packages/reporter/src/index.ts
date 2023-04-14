@@ -1,30 +1,21 @@
-interface ErrorOptions {
+interface Error {
 	name: string;
 	message: string;
 }
 
-export interface ReportOptions {
+export interface BaseReporter {
 	info: string;
 	warn: string;
 	ready: string;
 	start: string;
 	success: string;
-	error?: ErrorOptions;
-}
-
-interface BaseReporter {
-	get info(): string;
-	get warn(): string;
-	get ready(): string;
-	get start(): string;
-	get success(): string;
-	get error(): ErrorOptions;
+	error?: Error;
 }
 
 export class Reporter implements BaseReporter {
-	#options: ReportOptions;
+	#options: BaseReporter;
 
-	constructor(options: ReportOptions) {
+	constructor(options: BaseReporter) {
 		this.#options = options;
 	}
 
@@ -48,7 +39,7 @@ export class Reporter implements BaseReporter {
 		return this.#options.success;
 	}
 
-	get error(): ErrorOptions {
+	get error(): Error {
 		return this.#options.error ?? { name: "$name", message: "$message" };
 	}
 }

@@ -1,5 +1,5 @@
 import { expect, test, vi } from "vitest";
-import { loxt, Loxt, Colors, Reporter, format } from "../src";
+import { loxt, Loxt, colors, Reporter, format } from "../src";
 
 const TEST = "message for the test";
 
@@ -82,7 +82,7 @@ test("should just log", () => {
 
 test("should convert With function", () => {
 	expect(loxt.toString()).toBe(
-		`${Colors.magenta("class")} ${Colors.yellow(
+		`${colors.magenta("class")} ${colors.yellow(
 			"Loxt",
 		)} { \x1b[31mreporter\x1b[0m: \x1b[33m${
 			loxt.reporter.constructor.name
@@ -92,9 +92,9 @@ test("should convert With function", () => {
 
 test("should convert With static function", () => {
 	expect(Loxt.toString()).toBe(
-		`${Colors.magenta("class")} ${Colors.yellow("Loxt")}(${Colors.red(
+		`${colors.magenta("class")} ${colors.yellow("Loxt")}(${colors.red(
 			"reporter",
-		)}: ${Colors.yellow("Reporter")})`,
+		)}: ${colors.yellow("Reporter")})`,
 	);
 });
 
