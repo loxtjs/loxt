@@ -1,5 +1,12 @@
 # loxt
 
+## 3.9.1
+
+### Patch Changes
+
+- Updated dependencies [a79d57b]
+  - @loxtjs/reporter@2.5.0
+
 ## 3.9.0
 
 ### Minor Changes
