@@ -1,5 +1,17 @@
 # loxt
 
+## 3.9.0
+
+### Minor Changes
+
+- acdd2e7: chore: Rename Colors package to lowercase
+
+### Patch Changes
+
+- Updated dependencies [acdd2e7]
+  - @loxtjs/colors@2.0.0
+  - @loxtjs/reporter@2.4.0
+
 ## 3.5.0
 
 ### Minor Changes
