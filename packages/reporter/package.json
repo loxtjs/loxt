@@ -1,6 +1,6 @@
 {
 	"name": "@loxtjs/reporter",
-	"version": "2.2.1",
+	"version": "2.3.0",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
@@ -38,8 +38,8 @@
 	"homepage": "https://loxt.angelnext.dev",
 	"devDependencies": {
 		"tsconfig": "workspace:*",
-		"tsup": "^6.5.0",
-		"typescript": "^4.5.2",
+		"tsup": "^6.7.0",
+		"typescript": "^5.0.4",
 		"vitest": "^0.28.4"
 	}
 }
