@@ -1,21 +1,21 @@
-export interface Error {
+export interface LoxtError {
 	name: string;
 	message: string;
 }
 
-export interface BaseReporter {
+export interface LoxtReporter {
 	info: string;
 	warn: string;
 	ready: string;
 	start: string;
 	success: string;
-	error?: Error;
+	error?: LoxtError;
 }
 
-export class Reporter implements BaseReporter {
-	#options: BaseReporter;
+export class Reporter implements LoxtReporter {
+	#options: LoxtReporter;
 
-	constructor(options: BaseReporter) {
+	constructor(options: LoxtReporter) {
 		this.#options = options;
 	}
 
@@ -39,7 +39,7 @@ export class Reporter implements BaseReporter {
 		return this.#options.success;
 	}
 
-	get error(): Error {
+	get error(): LoxtError {
 		return this.#options.error ?? { name: "$name", message: "$message" };
 	}
 }
