@@ -2,8 +2,8 @@ import { colors } from "@loxtjs/colors";
 import { Reporter } from "@loxtjs/reporter";
 
 /** @class Loxt class to create an instance of loxt */
-
 export class Loxt {
+	/** @property Defines behaviour and looks of logging */
 	reporter: Reporter;
 
 	constructor(reporter?: Reporter) {
@@ -26,13 +26,6 @@ export class Loxt {
 			});
 	}
 
-	/** Use the success reporter.
-	 * @param message
-	 */
-	success(message: unknown): void {
-		console.log(Loxt.format(this.reporter.success, message));
-	}
-
 	/** Use the info reporter.
 	 * @param message
 	 */
@@ -40,25 +33,18 @@ export class Loxt {
 		console.log(Loxt.format(this.reporter.info, message));
 	}
 
+	/** Use the success reporter.
+	 * @param message
+	 */
+	success(message: unknown): void {
+		console.log(Loxt.format(this.reporter.success, message));
+	}
+
 	/** Use the warning reporter.
 	 * @param message
 	 */
 	warn(message: unknown): void {
 		console.warn(Loxt.format(this.reporter.warn, message));
-	}
-
-	/** Use the ready reporter
-	 * @param message
-	 */
-	ready(message: unknown): void {
-		console.log(Loxt.format(this.reporter.ready, message));
-	}
-
-	/** Use the start reporter
-	 * @param message
-	 */
-	start(message: unknown): void {
-		console.log(Loxt.format(this.reporter.start, message));
 	}
 
 	/** Use the error reporter
@@ -79,11 +65,18 @@ export class Loxt {
 		);
 	}
 
-	/** console.log alias with safe unknown
+	/** Use the ready reporter
 	 * @param message
 	 */
-	log(message: unknown): void {
-		console.log(message);
+	ready(message: unknown): void {
+		console.log(Loxt.format(this.reporter.ready, message));
+	}
+
+	/** Use the start reporter
+	 * @param message
+	 */
+	start(message: unknown): void {
+		console.log(Loxt.format(this.reporter.start, message));
 	}
 
 	/** @returns a new loxt instance with the same settings as this instance */
@@ -100,16 +93,23 @@ export class Loxt {
 		}\x1b[0m }`;
 	}
 
-	/** @returns a string representation of this class */
-	static toString(): string {
-		return `${colors.magenta("class")} ${colors.yellow("Loxt")}(${colors.red(
-			"reporter",
-		)}: ${colors.yellow("Reporter")})`;
+	/** console.log alias with safe unknown
+	 * @param message
+	 */
+	log(message: unknown): void {
+		console.log(message);
 	}
 
 	/** @returns a new loxt instance with the same settings as this instance */
 	static clone(instance: Loxt): Loxt {
 		return new Loxt(instance.reporter);
+	}
+
+	/** @returns a string representation of this class */
+	static toString(): string {
+		return `${colors.magenta("class")} ${colors.yellow("Loxt")}(${colors.red(
+			"reporter",
+		)}: ${colors.yellow("Reporter")})`;
 	}
 
 	/** console.log alias with safe unknown
