@@ -1,5 +1,11 @@
 # @loxtjs/reporter
 
+## 2.5.2
+
+### Patch Changes
+
+- 3041902: chore: Add better ide autocomplete
+
 ## 2.5.1
 
 ### Patch Changes
