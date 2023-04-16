@@ -1,5 +1,13 @@
 # loxt
 
+## 3.9.3
+
+### Patch Changes
+
+- 3041902: chore: Add better ide autocomplete
+- Updated dependencies [3041902]
+  - @loxtjs/reporter@2.5.2
+
 ## 3.9.2
 
 ### Patch Changes
