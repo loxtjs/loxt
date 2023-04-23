@@ -1,5 +1,11 @@
 # @loxtjs/reporter
 
+## 2.6.0
+
+### Minor Changes
+
+- b04ae90: fix: Remove unnecesary files
+
 ## 2.5.2
 
 ### Patch Changes

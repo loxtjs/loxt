@@ -1,5 +1,11 @@
 # @loxtjs/colors
 
+## 2.1.0
+
+### Minor Changes
+
+- b04ae90: fix: Remove unnecesary files
+
 ## 2.0.1
 
 ### Patch Changes
