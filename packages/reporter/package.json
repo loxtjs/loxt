@@ -1,14 +1,9 @@
 {
 	"name": "@loxtjs/reporter",
+	"description": "The reporter module allows you to create custom themes for loxt",
 	"version": "2.5.2",
 	"main": "./dist/index.js",
-	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.ts",
-	"exports": {
-		"import": "./dist/index.mjs",
-		"require": "./dist/index.js",
-		"types": "./dist/index.d.ts"
-	},
 	"contributors": [
 		"AngelNext <contact@angelnext.dev>"
 	],
@@ -16,7 +11,7 @@
 	"scripts": {
 		"test": "vitest run",
 		"test:watch": "vitest watch",
-		"build": "tsup src/index.ts --minify --format cjs --format esm --dts"
+		"build": "tsup src/index.ts --minify --format cjs --dts"
 	},
 	"directories": {
 		"lib": "src",
@@ -30,10 +25,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/loxtjs/loxt.git"
+		"url": "https://github.com/loxt-js/loxt.git"
 	},
 	"bugs": {
-		"url": "https://github.com/loxtjs/loxt/issues"
+		"url": "https://github.com/loxt-js/loxt/issues"
 	},
 	"homepage": "https://loxt.angelnext.dev",
 	"devDependencies": {
