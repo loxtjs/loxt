@@ -1,5 +1,17 @@
 # loxt
 
+## 3.10.0
+
+### Minor Changes
+
+- b04ae90: fix: Remove unnecesary files
+
+### Patch Changes
+
+- Updated dependencies [b04ae90]
+  - @loxtjs/reporter@2.6.0
+  - @loxtjs/colors@2.1.0
+
 ## 3.9.3
 
 ### Patch Changes
