@@ -5,14 +5,14 @@ import { Code } from 'astro/components';
 ---
 
 <Layout title='Logger - Docs'>
-	<Header title='Logger' description="Loxt's main function is to help you log messages with style" />
-	<main class='mt-5 gap-5 grid justify-center'>
-		<p>To start using it create a instance of the Loxt class, and then call its various methods.</p>
+	<Header title='Logger' description="Loxt's main function is to help you log messages with style">
 		<Code
 			wrap
 			lang='ts'
 			theme='one-dark-pro'
 			code={`
+	// To start using it create a instance of the Loxt class, and then call its various methods.
+
 	import Loxt from 'loxt';
 
 	const loxt = new Loxt();
@@ -24,7 +24,7 @@ import { Code } from 'astro/components';
 	loxt.error('Create your own themes!'); 
 	loxt.success('You can use themes from other people too!');
 	loxt.start('My Amazing App!');
-			`}
+		`}
 		/>
-	</main>
+	</Header>
 </Layout>

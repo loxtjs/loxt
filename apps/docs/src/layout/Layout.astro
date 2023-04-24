@@ -14,20 +14,31 @@ const { title } = Astro.props as Props;
 		<title>{title} - Loxt</title>
 		<meta charset='utf-8' />
 		<meta name='viewport' content='width=device-width' />
+		<meta name='title' content={`${title} - Loxt`} />
+		<meta name='description' content='Loxt is a simple and lightweight console logger with 0 external dependencies.' />
+		<meta name='theme-color' content='#2b2d31' />
+		<meta property='og:site_name' content='Pyrite' />
+		<meta property='og:title' content='Pyrite - Home' />
+		<meta property='og:image:width' content='6912' />
+		<meta property='og:image:height' content='3456' />
+		<meta property='og:description' content='Know your members. Know your community.' />
+		<meta property='og:image' content='/_astro/banner.3ca27c46.webp' />
+
+		<meta name='twitter:card' content='summary_large_image' />
+		<meta property='twitter:domain' content='pyritebot.netlify.app' />
+		<meta property='twitter:url' content='https://pyritebot.netlify.app/' />
+		<meta name='twitter:title' content='Pyrite - Home' />
+		<meta name='twitter:description' content='Know your members. Know your community.' />
+		<meta name='twitter:image' content='https://pyritebot.netlify.app/_astro/banner.3c2b2d71.webp' />
 		<link rel='shortcut icon' href={favicon} type='image/png' />
 	</head>
 
-	<body class='text-white'>
+	<body class='text-white bg-gray-950'>
 		<Navbar />
 		<slot />
 		<style>
-			body {
-				background-color: #03010a;
-				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%234a2586' fill-opacity='0.11' d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E");
-			}
-
 			:global(.astro-code) {
-				@apply rounded-md;
+				@apply rounded-md border;
 			}
 		</style>
 	</body>
