@@ -1,7 +1,11 @@
 import { colors } from "@loxtjs/colors";
 import { Reporter } from "@loxtjs/reporter";
 
-/** @class Loxt class to create an instance of loxt */
+/**
+ * @module loxt
+ * @class Loxt class to create an instance of loxt
+ */
+
 export class Loxt {
 	/** @property Defines behaviour and looks of logging */
 	reporter: Reporter;

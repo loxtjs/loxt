@@ -14,7 +14,10 @@ export interface LoxtReporter {
 	error?: LoxtError;
 }
 
-/** @class constructor to create a Reporter */
+/**
+ * @module reporter
+ * @class constructor to create a Reporter
+ */
 export class Reporter implements LoxtReporter {
 	#options: LoxtReporter;
 

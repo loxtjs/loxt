@@ -26,7 +26,11 @@ interface Colors {
 	strike: Color;
 }
 
-/** Helper package with escape codes for terminal colors */
+/**
+ * Helper package with escape codes for terminal colors
+ *
+ * @module colors
+ */
 export const colors: Colors = {
 	red: (text) => `\x1b[31m${text}\x1b[0m`,
 	green: (text) => `\x1b[32m${text}\x1b[0m`,
