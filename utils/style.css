@@ -136,7 +136,7 @@
 		--color-link: var(--dark-color-link);
 
 		--nav: #111827;
-		--sect: #0a0a1c
+		--sect: #0a0a1c;
 
 		--color-ts-module: var(--dark-color-ts-module);
 		--color-ts-namespace: var(--dark-color-ts-namespace);
