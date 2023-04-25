@@ -1,5 +1,11 @@
 # @loxtjs/reporter
 
+## 2.6.1
+
+### Patch Changes
+
+- 00e5012: chore: Better documentation
+
 ## 2.6.0
 
 ### Minor Changes
