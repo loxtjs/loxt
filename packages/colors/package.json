@@ -30,7 +30,7 @@
 	"bugs": {
 		"url": "https://github.com/loxt-js/loxt/issues"
 	},
-	"homepage": "https://loxt.angelnext.dev/docs/colors",
+	"homepage": "https://loxt.js.org/",
 	"devDependencies": {
 		"@vitest/coverage-c8": "^0.30.1",
 		"tsconfig": "workspace:*",

@@ -30,7 +30,7 @@
 	"bugs": {
 		"url": "https://github.com/loxt-js/loxt/issues"
 	},
-	"homepage": "https://loxt.angelnext.dev",
+	"homepage": "https://loxt.js.org/",
 	"devDependencies": {
 		"tsconfig": "workspace:*",
 		"tsup": "^6.7.0",

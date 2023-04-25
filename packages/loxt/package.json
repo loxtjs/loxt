@@ -27,7 +27,7 @@
 	"bugs": {
 		"url": "https://github.com/loxt-js/loxt/issues"
 	},
-	"homepage": "https://loxt.angelnext.dev",
+	"homepage": "https://loxt.js.org/",
 	"dependencies": {
 		"@loxtjs/colors": "workspace:*",
 		"@loxtjs/reporter": "workspace:*"

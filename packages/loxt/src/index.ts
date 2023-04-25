@@ -1,13 +1,16 @@
+/** @module loxt */
+
 import { colors } from "@loxtjs/colors";
 import { Reporter } from "@loxtjs/reporter";
 
 /**
- * @module loxt
- * @class Loxt class to create an instance of loxt
+ * ## Loxt
+ * constructor to create an instance of loxt
+ * @constructor
+ * @property {Reporter} reporter - Defined behaviour and looks of logging.
+ * @see {@link https://loxt.js.org/classes/loxt}
  */
-
 export class Loxt {
-	/** @property Defines behaviour and looks of logging */
 	reporter: Reporter;
 
 	constructor(reporter?: Reporter) {
@@ -30,29 +33,37 @@ export class Loxt {
 			});
 	}
 
-	/** Use the info reporter.
+	/**
+	 * Log with the info reporter.
 	 * @param message
+	 * @see {@link https://loxt.js.org/classes/loxt#info}
 	 */
 	info(message: unknown): void {
 		console.log(Loxt.format(this.reporter.info, message));
 	}
 
-	/** Use the success reporter.
+	/**
+	 * Log with the success reporter.
 	 * @param message
+	 * @see {@link https://loxt.js.org/classes/loxt#success}
 	 */
 	success(message: unknown): void {
 		console.log(Loxt.format(this.reporter.success, message));
 	}
 
-	/** Use the warning reporter.
+	/**
+	 * Log with the warning reporter.
 	 * @param message
+	 * @see {@link https://loxt.js.org/classes/loxt#warn}
 	 */
 	warn(message: unknown): void {
 		console.warn(Loxt.format(this.reporter.warn, message));
 	}
 
-	/** Use the error reporter
+	/**
+	 * Log with the error reporter
 	 * @param error
+	 * @see {@link https://loxt.js.org/classes/loxt#error}
 	 */
 	error(error: unknown): void {
 		const { name, message } = this.reporter.error;
@@ -69,26 +80,38 @@ export class Loxt {
 		);
 	}
 
-	/** Use the ready reporter
+	/**
+	 * Log with the ready reporter
 	 * @param message
+	 * @see {@link https://loxt.js.org/classes/loxt#ready}
 	 */
 	ready(message: unknown): void {
 		console.log(Loxt.format(this.reporter.ready, message));
 	}
 
-	/** Use the start reporter
+	/**
+	 * Log with the start reporter
 	 * @param message
+	 * @see {@link https://loxt.js.org/classes/loxt#start}
 	 */
 	start(message: unknown): void {
 		console.log(Loxt.format(this.reporter.start, message));
 	}
 
-	/** @returns a new loxt instance with the same settings as this instance */
+	/**
+	 * Generates a new loxt instance with the same settings as this instance
+	 * @returns the new instance
+	 * @see {@link https://loxt.js.org/classes/loxt#clone}
+	 */
 	clone(): Loxt {
 		return new Loxt(this.reporter);
 	}
 
-	/** @returns a string representation of this instance */
+	/**
+	 * Generates a string representation of this instance
+	 * @returns a string representation of this instance
+	 * @see {@link https://loxt.js.org/classes/loxt#toString}
+	 */
 	toString(): string {
 		return `${colors.magenta("class")} ${colors.yellow(
 			"Loxt",
@@ -99,17 +122,26 @@ export class Loxt {
 
 	/** console.log alias with safe unknown
 	 * @param message
+	 * @see {@link https://loxt.js.org/classes/loxt#log}
 	 */
 	log(message: unknown): void {
 		console.log(message);
 	}
 
-	/** @returns a new loxt instance with the same settings as this instance */
+	/**
+	 * Generates a new loxt instance with the same settings the instance you provide
+	 * @returns the new instance
+	 * @see {@link https://loxt.js.org/classes/loxt#clone-2}
+	 */
 	static clone(instance: Loxt): Loxt {
 		return new Loxt(instance.reporter);
 	}
 
-	/** @returns a string representation of this class */
+	/**
+	 * Generates a string representation of this class
+	 * @returns a string representation of this class
+	 * @see {@link https://loxt.js.org/classes/loxt#toString-2}
+	 */
 	static toString(): string {
 		return `${colors.magenta("class")} ${colors.yellow("Loxt")}(${colors.red(
 			"reporter",
@@ -118,14 +150,17 @@ export class Loxt {
 
 	/** console.log alias with safe unknown
 	 * @param message
+	 * @see {@link https://loxt.js.org/classes/loxt#log}
 	 */
 	static log(message: unknown): void {
 		console.log(message);
 	}
 
-	/** Replace the placeholder in the string with the provided message.
+	/** Replaces the placeholder in the string with the provided message.
 	 * @param reporter
 	 * @param message
+	 * @returns The formatted string
+	 * @see {@link https://loxt.js.org/classes/loxt#format}
 	 */
 	static format(reporter: string, message: unknown): string {
 		return reporter.replace(/\$message|\$name/g, `${message}`);
@@ -134,12 +169,18 @@ export class Loxt {
 
 export { colors, Reporter };
 
-/** Replaces the placeholder in the string with the provided message.
+/** Replaces the placeholder in the string with the provided message (alias Loxt.format).
  * @param reporter
  * @param message
+ * @returns The formatted string
+ * @see {@link https://loxt.js.org/functions/format}
  */
 export const format = (reporter: string, message: unknown): string =>
 	reporter.replace(/\$message|\$name/g, `${message}`);
 
-/** @instance a global instance of Loxt */
+/**
+ * A global instance of Loxt
+ * @instance
+ * @see {@link https://loxt.js.org/variables/loxt-1}
+ */
 export const loxt = new Loxt();

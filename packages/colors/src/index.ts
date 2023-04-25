@@ -1,6 +1,16 @@
+/** @module colors */
+
+/**
+ * Helper type for a color function
+ * @access package
+ */
 type Color = (text: unknown) => string;
 
-interface Colors {
+/**
+ * Helper type for Colors object
+ * @access package
+ */
+type Colors = {
 	red: Color;
 	green: Color;
 	yellow: Color;
@@ -24,12 +34,11 @@ interface Colors {
 	blink: Color;
 	hidden: Color;
 	strike: Color;
-}
+};
 
 /**
  * Helper package with escape codes for terminal colors
- *
- * @module colors
+ * @see {@link https://loxt.js.org/variables/colors}
  */
 export const colors: Colors = {
 	red: (text) => `\x1b[31m${text}\x1b[0m`,
