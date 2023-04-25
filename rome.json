@@ -5,6 +5,6 @@
 	},
 	"linter": {
 		"enabled": true,
-		"ignore": ["./**/*/node_modules/**/*.*", "./packages/**/*/coverage/*.*", "./**/*/dist/**/*.*"]
+		"ignore": ["./apps/docs", "./**/*/node_modules/**/*.*", "./packages/**/*/coverage/*.*", "./**/*/dist/**/*.*"]
 	}
 }
