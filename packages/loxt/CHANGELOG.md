@@ -1,5 +1,14 @@
 # loxt
 
+## 3.10.1
+
+### Patch Changes
+
+- 00e5012: chore: Better documentation
+- Updated dependencies [00e5012]
+  - @loxtjs/reporter@2.6.1
+  - @loxtjs/colors@2.1.1
+
 ## 3.10.0
 
 ### Minor Changes
