@@ -1,5 +1,17 @@
 # loxt
 
+## 3.11.0
+
+### Minor Changes
+
+- d7c0eeb: chore: Deprecate @loxtjs/colors
+  chore: Start using picocolors
+
+### Patch Changes
+
+- Updated dependencies [d7c0eeb]
+  - @loxtjs/reporter@2.6.2
+
 ## 3.10.1
 
 ### Patch Changes
