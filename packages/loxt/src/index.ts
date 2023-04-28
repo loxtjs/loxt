@@ -1,7 +1,7 @@
 /** @module loxt */
 
 import { Reporter } from "@loxtjs/reporter";
-import pc from "picocolors"
+import pc from "picocolors";
 
 /**
  * ## Loxt
@@ -21,28 +21,23 @@ export class Loxt {
 	 * @see {@link https://loxt.js.org/classes/loxt#constructor}
 	 * @returns Instance of Loxt with the provided reporter
 	 */
-	constructor (reporter?: Reporter) {
-		this.info = this.info.bind(this)
-		this.success = this.success.bind(this)
-		this.warn = this.warn.bind(this)
-		this.error = this.error.bind(this)
-		this.ready = this.ready.bind(this)
-		this.start = this.start.bind(this)
-		this.clone = this.clone.bind(this)
-		this.toString = this.toString.bind(this)
+	constructor(reporter?: Reporter) {
+		this.info = this.info.bind(this);
+		this.success = this.success.bind(this);
+		this.warn = this.warn.bind(this);
+		this.error = this.error.bind(this);
+		this.ready = this.ready.bind(this);
+		this.start = this.start.bind(this);
+		this.clone = this.clone.bind(this);
 
 		this.reporter =
 			reporter ??
 			new Reporter({
 				info: `${pc.bold(pc.blue("info"))}: ${pc.dim("$message")}`,
-				warn: `${pc.bold(pc.yellow("warning"))}: ${pc.dim(
-					"$message",
-				)}`,
+				warn: `${pc.bold(pc.yellow("warning"))}: ${pc.dim("$message")}`,
 				ready: `${pc.green("ready")} ${pc.dim("$message")}`,
 				start: `${pc.green("start")} ${pc.dim("$message")}`,
-				success: `${pc.bold(pc.green("success"))}: ${pc.dim(
-					"$message",
-				)}`,
+				success: `${pc.bold(pc.green("success"))}: ${pc.dim("$message")}`,
 				error: {
 					name: pc.bold(pc.red("$name")),
 					message: pc.dim("$message"),
@@ -85,7 +80,8 @@ export class Loxt {
 	error(error: unknown): void {
 		const { name, message } = this.reporter.error;
 
-		if (!(error instanceof Error)) {8
+		if (!(error instanceof Error)) {
+			8;
 			console.error(
 				`${Loxt.format(name, "error")}: ${Loxt.format(message, error)}`,
 			);
@@ -144,4 +140,4 @@ export class Loxt {
  */
 export const loxt = new Loxt();
 
-export { Reporter }
+export { Reporter };
