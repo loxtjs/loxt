@@ -2,7 +2,7 @@
 
 # [Loxt](https://loxt.js.org/)
 
-Loxt is a simple and lightweight console logger with 0 external dependencies.
+Loxt is a simple and lightweight console logger that makes debugging fun and easy.
 
 ---
 

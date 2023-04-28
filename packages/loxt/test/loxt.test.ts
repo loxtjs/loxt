@@ -1,10 +1,9 @@
 import { expect, test, vi } from "vitest";
-import { loxt, Loxt, colors, Reporter, format } from "../src";
+import { loxt, Loxt } from "../src";
 
 const TEST = "message for the test";
 
-const loxt2 = loxt.clone();
-const loxt3 = Loxt.clone(loxt);
+const clone = loxt.clone();
 
 const spyLog = vi.spyOn(console, "log");
 const spyWarn = vi.spyOn(console, "warn");
@@ -12,7 +11,6 @@ const spyError = vi.spyOn(console, "error");
 
 test("should Loxt.format string", () => {
 	expect(Loxt.format("$message", TEST)).toBe(TEST);
-	expect(format("$message", TEST)).toBe(TEST);
 });
 
 test("should log info", () => {
@@ -30,7 +28,7 @@ test("should log warn", () => {
 	expect(spyWarn).toHaveBeenCalledWith(Loxt.format(loxt.reporter.warn, TEST));
 });
 
-test("should log error With string", () => {
+test("error reporter should log correctly if provided with a non-error type", () => {
 	loxt.error(TEST);
 	const { name, message } = loxt.reporter.error;
 	expect(spyError).toHaveBeenCalledWith(
@@ -38,7 +36,7 @@ test("should log error With string", () => {
 	);
 });
 
-test("should log error With Error", () => {
+test("error reporter should log correctly if provided with an error", () => {
 	const error = new Error(TEST);
 	loxt.error(error);
 	const { name, message } = loxt.reporter.error;
@@ -47,17 +45,6 @@ test("should log error With Error", () => {
 			?.replace(error.name, Loxt.format(name, error.constructor.name))
 			.replace(error.message, Loxt.format(message, error.message)),
 	);
-});
-
-test("should have default error", () => {
-	const reporter = new Reporter({
-		info: "",
-		ready: "",
-		start: "",
-		success: "",
-		warn: "",
-	});
-	expect(reporter.error).toMatchObject({ name: "$name", message: "$message" });
 });
 
 test("should log ready", () => {
@@ -70,38 +57,6 @@ test("should log start", () => {
 	expect(spyLog).toHaveBeenCalledWith(Loxt.format(loxt.reporter.start, TEST));
 });
 
-test("should just log", () => {
-	loxt.log(TEST);
-	expect(spyLog).toHaveBeenCalledWith(TEST);
-});
-
-test("should just log", () => {
-	Loxt.log(TEST);
-	expect(spyLog).toHaveBeenCalledWith(TEST);
-});
-
-test("should convert With function", () => {
-	expect(loxt.toString()).toBe(
-		`${colors.magenta("class")} ${colors.yellow(
-			"Loxt",
-		)} { \x1b[31mreporter\x1b[0m: \x1b[33m${
-			loxt.reporter.constructor.name
-		}\x1b[0m }`,
-	);
-});
-
-test("should convert With static function", () => {
-	expect(Loxt.toString()).toBe(
-		`${colors.magenta("class")} ${colors.yellow("Loxt")}(${colors.red(
-			"reporter",
-		)}: ${colors.yellow("Reporter")})`,
-	);
-});
-
 test("should clone reporters With instance method", () => {
-	expect(loxt.reporter).toEqual(loxt2.reporter);
-});
-
-test("should clone reporters With static method", () => {
-	expect(loxt.reporter).toEqual(loxt3.reporter);
+	expect(loxt.reporter).toEqual(clone.reporter);
 });

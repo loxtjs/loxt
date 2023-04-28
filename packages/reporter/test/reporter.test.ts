@@ -9,7 +9,7 @@ const reporter = new Reporter({
 	success: "success: $message",
 });
 
-test("should user getters", () => {
+test("should use the correct formatting for the reporters", () => {
 	expect(reporter.info).toBe("info: $message");
 	expect(reporter.warn).toBe("warning: $message");
 	expect(reporter.ready).toBe("ready $message");

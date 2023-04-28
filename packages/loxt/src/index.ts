@@ -1,34 +1,51 @@
 /** @module loxt */
 
-import { colors } from "@loxtjs/colors";
 import { Reporter } from "@loxtjs/reporter";
+import pc from "picocolors"
 
 /**
  * ## Loxt
- * constructor to create an instance of loxt
- * @constructor
+ * utility class to use the logger (Reporter)
+ * @class
  * @property {Reporter} reporter - Defined behaviour and looks of logging.
  * @see {@link https://loxt.js.org/classes/loxt}
  */
 export class Loxt {
 	reporter: Reporter;
 
-	constructor(reporter?: Reporter) {
+	/**
+	 * ## Loxt
+	 * constructor for the Loxt class
+	 * @constructor
+	 * @param reporter
+	 * @see {@link https://loxt.js.org/classes/loxt#constructor}
+	 * @returns Instance of Loxt with the provided reporter
+	 */
+	constructor (reporter?: Reporter) {
+		this.info = this.info.bind(this)
+		this.success = this.success.bind(this)
+		this.warn = this.warn.bind(this)
+		this.error = this.error.bind(this)
+		this.ready = this.ready.bind(this)
+		this.start = this.start.bind(this)
+		this.clone = this.clone.bind(this)
+		this.toString = this.toString.bind(this)
+
 		this.reporter =
 			reporter ??
 			new Reporter({
-				info: `${colors.bold(colors.blue("info"))}: ${colors.dim("$message")}`,
-				warn: `${colors.bold(colors.yellow("warning"))}: ${colors.dim(
+				info: `${pc.bold(pc.blue("info"))}: ${pc.dim("$message")}`,
+				warn: `${pc.bold(pc.yellow("warning"))}: ${pc.dim(
 					"$message",
 				)}`,
-				ready: `${colors.green("ready")} ${colors.dim("$message")}`,
-				start: `${colors.green("start")} ${colors.dim("$message")}`,
-				success: `${colors.bold(colors.green("success"))}: ${colors.dim(
+				ready: `${pc.green("ready")} ${pc.dim("$message")}`,
+				start: `${pc.green("start")} ${pc.dim("$message")}`,
+				success: `${pc.bold(pc.green("success"))}: ${pc.dim(
 					"$message",
 				)}`,
 				error: {
-					name: colors.bold(colors.red("$name")),
-					message: colors.dim("$message"),
+					name: pc.bold(pc.red("$name")),
+					message: pc.dim("$message"),
 				},
 			});
 	}
@@ -67,12 +84,14 @@ export class Loxt {
 	 */
 	error(error: unknown): void {
 		const { name, message } = this.reporter.error;
-		if (!(error instanceof Error)) {
+
+		if (!(error instanceof Error)) {8
 			console.error(
 				`${Loxt.format(name, "error")}: ${Loxt.format(message, error)}`,
 			);
 			return;
 		}
+
 		console.error(
 			error.stack
 				?.replace(error.name, Loxt.format(name, error.constructor.name))
@@ -100,60 +119,11 @@ export class Loxt {
 
 	/**
 	 * Generates a new loxt instance with the same settings as this instance
-	 * @returns the new instance
+	 * @returns the new instance with the reporter of this instance
 	 * @see {@link https://loxt.js.org/classes/loxt#clone}
 	 */
 	clone(): Loxt {
 		return new Loxt(this.reporter);
-	}
-
-	/**
-	 * Generates a string representation of this instance
-	 * @returns a string representation of this instance
-	 * @see {@link https://loxt.js.org/classes/loxt#toString}
-	 */
-	toString(): string {
-		return `${colors.magenta("class")} ${colors.yellow(
-			"Loxt",
-		)} { \x1b[31mreporter\x1b[0m: \x1b[33m${
-			this.reporter.constructor.name
-		}\x1b[0m }`;
-	}
-
-	/** console.log alias with safe unknown
-	 * @param message
-	 * @see {@link https://loxt.js.org/classes/loxt#log}
-	 */
-	log(message: unknown): void {
-		console.log(message);
-	}
-
-	/**
-	 * Generates a new loxt instance with the same settings the instance you provide
-	 * @returns the new instance
-	 * @see {@link https://loxt.js.org/classes/loxt#clone-2}
-	 */
-	static clone(instance: Loxt): Loxt {
-		return new Loxt(instance.reporter);
-	}
-
-	/**
-	 * Generates a string representation of this class
-	 * @returns a string representation of this class
-	 * @see {@link https://loxt.js.org/classes/loxt#toString-2}
-	 */
-	static toString(): string {
-		return `${colors.magenta("class")} ${colors.yellow("Loxt")}(${colors.red(
-			"reporter",
-		)}: ${colors.yellow("Reporter")})`;
-	}
-
-	/** console.log alias with safe unknown
-	 * @param message
-	 * @see {@link https://loxt.js.org/classes/loxt#log}
-	 */
-	static log(message: unknown): void {
-		console.log(message);
 	}
 
 	/** Replaces the placeholder in the string with the provided message.
@@ -167,20 +137,11 @@ export class Loxt {
 	}
 }
 
-export { colors, Reporter };
-
-/** Replaces the placeholder in the string with the provided message (alias Loxt.format).
- * @param reporter
- * @param message
- * @returns The formatted string
- * @see {@link https://loxt.js.org/functions/format}
- */
-export const format = (reporter: string, message: unknown): string =>
-	reporter.replace(/\$message|\$name/g, `${message}`);
-
 /**
  * A global instance of Loxt
  * @instance
  * @see {@link https://loxt.js.org/variables/loxt-1}
  */
 export const loxt = new Loxt();
+
+export { Reporter }

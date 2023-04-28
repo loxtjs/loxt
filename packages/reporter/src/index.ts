@@ -24,14 +24,19 @@ type LoxtReporter = {
 
 /**
  * ## Reporter
- * constructor to create a Reporter instance
- * @constructor
+ * utility class to create a reporter
+ * @class
  * @see {@link https://loxt.js.org/classes/reporter}
  */
 export class Reporter implements LoxtReporter {
 	/** @access package */
 	#options: LoxtReporter;
 
+	/**
+	 * 
+	 * @param options
+	 * @returns An instance of the reporter with the provided options
+	 */
 	constructor(options: LoxtReporter) {
 		this.#options = options;
 	}

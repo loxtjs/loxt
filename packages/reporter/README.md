@@ -2,7 +2,7 @@
 
 # [Loxt](https://loxt.js.org/)
 
-Loxt is a simple and lightweight console logger with 0 external dependencies.
+Loxt is a simple and lightweight console logger that makes debugging fun and easy.
 
 The `reporter` module allows you to create custom themes for loxt
 
@@ -16,17 +16,17 @@ The `reporter` module allows you to create custom themes for loxt
 ---
 
 ```ts
-import { Reporter, colors } from 'loxt';
+import { Reporter } from 'loxt';
 
-const salmon = new Reporter({
-	info: `${colors.bold(colors.blue('info'))}: ${colors.dim('$message')}`,
-	warn: `${colors.bold(colors.yellow('warning'))}: ${colors.dim('$message')}`,
-	ready: `${colors.green('ready')} ${colors.dim('$message')}`,
-	start: `${colors.green('start')} ${colors.dim('$message')}`,
-	success: `${colors.bold(colors.green('success'))}: ${colors.dim('$message')}`,
+const reporter = new Reporter({
+	info: "info: $message",
+	success: "success: $message",
+	warn: "warning: $message",
 	error: {
-		name: colors.bold(colors.red('$name:')),
-		message: colors.dim('$message'),
+		name: '$name',
+		message: '$message'
 	},
+	ready: "ready $message",
+	start: "start $message",
 });
 ```
