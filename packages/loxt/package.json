@@ -22,10 +22,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/loxt-js/loxt.git"
+		"url": "https://github.com/loxtjs/loxt.git"
 	},
 	"bugs": {
-		"url": "https://github.com/loxt-js/loxt/issues"
+		"url": "https://github.com/loxtjs/loxt/issues"
 	},
 	"homepage": "https://loxt.js.org/",
 	"dependencies": {
