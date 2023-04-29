@@ -1,7 +1,7 @@
 {
 	"name": "@loxtjs/reporter",
 	"description": "The reporter module allows you to create custom themes for loxt",
-	"version": "2.6.2",
+	"version": "2.6.3",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"contributors": [

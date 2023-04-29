@@ -1,5 +1,13 @@
 # loxt
 
+## 3.11.2
+
+### Patch Changes
+
+- f5110a8: chore: Update links in npm and README
+- Updated dependencies [f5110a8]
+  - @loxtjs/reporter@2.6.3
+
 ## 3.11.1
 
 ### Patch Changes
