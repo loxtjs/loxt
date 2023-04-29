@@ -1,5 +1,11 @@
 # loxt
 
+## 3.11.1
+
+### Patch Changes
+
+- fad8637: fix: Remove "this.toString = this.toString.bind(this)"
+
 ## 3.11.0
 
 ### Minor Changes
