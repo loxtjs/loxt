@@ -1,5 +1,11 @@
 # @loxtjs/reporter
 
+## 2.6.3
+
+### Patch Changes
+
+- f5110a8: chore: Update links in npm and README
+
 ## 2.6.2
 
 ### Patch Changes
