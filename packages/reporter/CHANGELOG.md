@@ -1,5 +1,11 @@
 # @loxtjs/reporter
 
+## 2.6.4
+
+### Patch Changes
+
+- 61f89d1: chore: @loxtjs/colors restored
+
 ## 2.6.3
 
 ### Patch Changes
