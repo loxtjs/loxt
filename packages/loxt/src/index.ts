@@ -116,7 +116,7 @@ export class Loxt {
 	}
 
 	/**
-	 * Generates a new loxt instance with the same settings as this instance
+	 * Generates a new loxt instance with the same reporter as this instance
 	 * @returns the new instance
 	 * @see {@link https://loxt.js.org/classes/loxt#clone}
 	 */

@@ -6,19 +6,17 @@ on:
   pull_request:
     types: [opened, synchronize]
 
-permissions:
-  contents: write
-  pull-requests: write
-  id-token: write
-  issues: read
-  packages: none
-
 jobs:
   deploy:
     name: Lint, Build, Test and Deploy
     timeout-minutes: 15
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+      issues: read
+      packages: none
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -33,7 +31,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           cache: 'pnpm'
 
       - name: Install dependencies

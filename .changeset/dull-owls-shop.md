@@ -1,0 +1,5 @@
+---
+"loxt": patch
+---
+
+fix: docs
