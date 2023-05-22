@@ -1,7 +1,9 @@
-/** @module loxt */
-
 import { Reporter } from "@loxtjs/reporter";
-import pc from "picocolors";
+import { defineColors } from "@loxtjs/colors";
+
+defineColors();
+
+const MESSAGE = "$message";
 
 /**
  * ## Loxt
@@ -21,7 +23,19 @@ export class Loxt {
 	 * @see {@link https://loxt.js.org/classes/loxt#constructor}
 	 * @returns Instance of Loxt with the provided reporter
 	 */
-	constructor(reporter?: Reporter) {
+	constructor(
+		reporter: Reporter = new Reporter({
+			info: `${"info".blue.textBold}: ${MESSAGE.textDim}`,
+			warn: `${"warning".yellow.textBold}: ${MESSAGE.textDim}`,
+			ready: `${"ready".green} ${MESSAGE.textDim}`,
+			start: `${"start".green} ${MESSAGE.textDim}`,
+			success: `${"success".green.textBold}: ${MESSAGE.textDim}`,
+			error: {
+				name: "$name".red.textBold,
+				message: MESSAGE.textDim,
+			},
+		}),
+	) {
 		this.info = this.info.bind(this);
 		this.success = this.success.bind(this);
 		this.warn = this.warn.bind(this);
@@ -30,19 +44,7 @@ export class Loxt {
 		this.start = this.start.bind(this);
 		this.clone = this.clone.bind(this);
 
-		this.reporter =
-			reporter ??
-			new Reporter({
-				info: `${pc.bold(pc.blue("info"))}: ${pc.dim("$message")}`,
-				warn: `${pc.bold(pc.yellow("warning"))}: ${pc.dim("$message")}`,
-				ready: `${pc.green("ready")} ${pc.dim("$message")}`,
-				start: `${pc.green("start")} ${pc.dim("$message")}`,
-				success: `${pc.bold(pc.green("success"))}: ${pc.dim("$message")}`,
-				error: {
-					name: pc.bold(pc.red("$name")),
-					message: pc.dim("$message"),
-				},
-			});
+		this.reporter = reporter;
 	}
 
 	/**
@@ -126,6 +128,7 @@ export class Loxt {
 	 * @param reporter
 	 * @param message
 	 * @returns The formatted string
+	 * @static
 	 * @see {@link https://loxt.js.org/classes/loxt#format}
 	 */
 	static format(reporter: string, message: unknown): string {

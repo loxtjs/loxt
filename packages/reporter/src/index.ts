@@ -1,5 +1,3 @@
-/** @module reporter */
-
 /**
  * Helper type of the loxt error
  * @access package
@@ -15,11 +13,11 @@ type LoxtError = {
  */
 type LoxtReporter = {
 	info: string;
+	success: string;
 	warn: string;
+	error?: LoxtError;
 	ready: string;
 	start: string;
-	success: string;
-	error?: LoxtError;
 };
 
 /**
@@ -33,7 +31,7 @@ export class Reporter implements LoxtReporter {
 	#options: LoxtReporter;
 
 	/**
-	 * 
+	 *
 	 * @param options
 	 * @returns An instance of the reporter with the provided options
 	 */

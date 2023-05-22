@@ -4,7 +4,11 @@
 		"ignore": ["./**/*/node_modules/**/*.*", "./packages/**/*/coverage/*.*", "./**/*/dist/**/*.*"]
 	},
 	"linter": {
-		"enabled": true,
+		"rules": {
+			"suspicious": {
+				"noEmptyInterface": "off"
+			}
+		},
 		"ignore": ["./apps/docs", "./**/*/node_modules/**/*.*", "./packages/**/*/coverage/*.*", "./**/*/dist/**/*.*"]
 	}
 }

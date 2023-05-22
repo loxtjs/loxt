@@ -1,7 +1,7 @@
 {
-	"name": "@loxtjs/reporter",
-	"description": "The reporter module allows you to create custom themes for loxt",
-	"version": "2.6.3",
+	"name": "@loxtjs/colors",
+	"description": "The colors module allows you to create your own themes for loxt",
+	"version": "2.1.0",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"contributors": [
@@ -26,13 +26,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/loxtjs/loxt.git"
+		"url": "https://github.com/loxt-js/loxt.git"
 	},
 	"bugs": {
-		"url": "https://github.com/loxtjs/loxt/issues"
+		"url": "https://github.com/loxt-js/loxt/issues"
 	},
 	"homepage": "https://loxt.js.org/",
 	"devDependencies": {
+		"@vitest/coverage-c8": "^0.30.1",
 		"tsconfig": "workspace:*",
 		"tsup": "^6.7.0",
 		"typescript": "^5.0.4",
