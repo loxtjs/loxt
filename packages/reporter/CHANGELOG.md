@@ -1,5 +1,11 @@
 # @loxtjs/reporter
 
+## 2.6.5
+
+### Patch Changes
+
+- a4ac400: fix: provenance
+
 ## 2.6.4
 
 ### Patch Changes
