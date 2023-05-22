@@ -34,7 +34,6 @@
 		"@loxtjs/reporter": "workspace:*"
 	},
 	"devDependencies": {
-		"@types/node": "^20.2.1",
 		"@vitest/coverage-c8": "^0.31.1",
 		"tsconfig": "workspace:*",
 		"tsup": "^6.7.0",
