@@ -1,5 +1,11 @@
 # loxt
 
+## 3.11.5
+
+### Patch Changes
+
+- 0ea861f: fix: Docs too redundant
+
 ## 3.11.3
 
 ### Patch Changes
