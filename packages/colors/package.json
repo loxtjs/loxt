@@ -8,7 +8,6 @@
 		"AngelNext <contact@angelnext.dev>"
 	],
 	"license": "MIT",
-	"provenance": true,
 	"scripts": {
 		"test": "vitest run",
 		"test:watch": "vitest watch",
@@ -22,7 +21,8 @@
 		"dist"
 	],
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"provenance": true
 	},
 	"repository": {
 		"type": "git",

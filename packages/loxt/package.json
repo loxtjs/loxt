@@ -5,7 +5,6 @@
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"license": "MIT",
-	"provenance": true,
 	"scripts": {
 		"test": "vitest run",
 		"test:watch": "vitest watch",
@@ -19,7 +18,8 @@
 		"dist"
 	],
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"provenance": true
 	},
 	"repository": {
 		"type": "git",
