@@ -7,7 +7,7 @@ const MESSAGE = "$message";
 
 /**
  * ## Loxt
- * utility class to use the logger (Reporter)
+ * utility class to use the logger (reporter)
  * @class
  * @property {Reporter} reporter - Defined behaviour and looks of logging.
  * @see {@link https://loxt.js.org/classes/loxt}
@@ -117,7 +117,7 @@ export class Loxt {
 
 	/**
 	 * Generates a new loxt instance with the same settings as this instance
-	 * @returns the new instance with the reporter of this instance
+	 * @returns the new instance
 	 * @see {@link https://loxt.js.org/classes/loxt#clone}
 	 */
 	clone(): Loxt {
