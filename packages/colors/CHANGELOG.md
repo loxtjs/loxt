@@ -1,5 +1,11 @@
 # @loxtjs/colors
 
+## 3.0.1
+
+### Patch Changes
+
+- a4ac400: fix: provenance
+
 ## 3.0.0
 
 ### Major Changes

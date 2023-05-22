@@ -1,5 +1,14 @@
 # loxt
 
+## 3.11.6
+
+### Patch Changes
+
+- a4ac400: fix: provenance
+- Updated dependencies [a4ac400]
+  - @loxtjs/reporter@2.6.5
+  - @loxtjs/colors@3.0.1
+
 ## 3.11.5
 
 ### Patch Changes
