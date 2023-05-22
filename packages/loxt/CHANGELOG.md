@@ -1,5 +1,14 @@
 # loxt
 
+## 3.11.3
+
+### Patch Changes
+
+- 61f89d1: chore: @loxtjs/colors restored
+- Updated dependencies [61f89d1]
+  - @loxtjs/colors@3.0.0
+  - @loxtjs/reporter@2.6.4
+
 ## 3.11.2
 
 ### Patch Changes

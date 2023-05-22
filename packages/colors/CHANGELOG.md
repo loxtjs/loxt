@@ -1,5 +1,11 @@
 # @loxtjs/colors
 
+## 3.0.0
+
+### Major Changes
+
+- 61f89d1: chore: @loxtjs/colors restored
+
 ## 2.1.0
 
 ### Minor Changes
