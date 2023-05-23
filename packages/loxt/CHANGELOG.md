@@ -1,5 +1,11 @@
 # loxt
 
+## 3.11.7
+
+### Patch Changes
+
+- 27bf741: fix: docs
+
 ## 3.11.6
 
 ### Patch Changes
