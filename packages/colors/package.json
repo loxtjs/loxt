@@ -33,7 +33,7 @@
 	},
 	"homepage": "https://loxt.js.org/",
 	"devDependencies": {
-		"@vitest/coverage-c8": "^0.31.1",
+		"@vitest/coverage-c8": "^0.32.1",
 		"tsconfig": "workspace:*",
 		"tsup": "^6.7.0",
 		"typescript": "^5.0.4",
