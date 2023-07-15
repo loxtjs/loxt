@@ -1,5 +1,13 @@
 # loxt
 
+## 3.11.8
+
+### Patch Changes
+
+- 9536998: chore(deps-dev): bump @vitest/coverage-c8 from 0.30.1 to 0.33.0
+- Updated dependencies [9536998]
+  - @loxtjs/colors@3.0.2
+
 ## 3.11.7
 
 ### Patch Changes
