@@ -1,5 +1,16 @@
 # loxt
 
+## 3.12.0
+
+### Minor Changes
+
+- 9404e5a: chore: Deprecate @loxtjs/colors and use new format
+
+### Patch Changes
+
+- Updated dependencies [9404e5a]
+  - @loxtjs/reporter@2.7.0
+
 ## 3.11.8
 
 ### Patch Changes

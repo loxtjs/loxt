@@ -1,5 +1,11 @@
 # @loxtjs/reporter
 
+## 2.7.0
+
+### Minor Changes
+
+- 9404e5a: chore: Deprecate @loxtjs/colors and use new format
+
 ## 2.6.5
 
 ### Patch Changes
