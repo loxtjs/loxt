@@ -1,9 +1,4 @@
 import { Reporter } from "@loxtjs/reporter";
-import { defineColors } from "@loxtjs/colors";
-
-defineColors();
-
-const MESSAGE = "$message";
 
 /**
  * ## Loxt
@@ -25,14 +20,14 @@ export class Loxt {
 	 */
 	constructor(
 		reporter: Reporter = new Reporter({
-			info: `${"info".blue.textBold}: ${MESSAGE.textDim}`,
-			warn: `${"warning".yellow.textBold}: ${MESSAGE.textDim}`,
-			ready: `${"ready".green} ${MESSAGE.textDim}`,
-			start: `${"start".green} ${MESSAGE.textDim}`,
-			success: `${"success".green.textBold}: ${MESSAGE.textDim}`,
+			info: "\x1b[1m\x1b[34minfo\x1b[0m: $0\x1b[0m",
+			warn: "\x1b[1m\x1b[33mwarning\x1b[0m: $0\x1b[0m",
+			ready: "\x1b[1m\x1b[32mready\x1b[0m $0\x1b[0m",
+			start: "\x1b[1m\x1b[32mstart\x1b[0m $0\x1b[0m",
+			success: "\x1b[1m\x1b[32msuccess\x1b[0m: $0\x1b[0m",
 			error: {
-				name: "$name".red.textBold,
-				message: MESSAGE.textDim,
+				name: "\x1b[1m\x1b[31m$0\x1b[0m",
+				message: "$1\x1b[0m",
 			},
 		}),
 	) {
@@ -132,7 +127,7 @@ export class Loxt {
 	 * @see {@link https://loxt.js.org/classes/loxt#format}
 	 */
 	static format(reporter: string, message: unknown): string {
-		return reporter.replace(/\$message|\$name/g, `${message}`);
+		return reporter.replace(/\$[0-9]/, `${message}`);
 	}
 }
 

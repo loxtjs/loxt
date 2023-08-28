@@ -30,7 +30,6 @@
 	},
 	"homepage": "https://loxt.js.org/",
 	"dependencies": {
-		"@loxtjs/colors": "workspace:*",
 		"@loxtjs/reporter": "workspace:*"
 	},
 	"devDependencies": {

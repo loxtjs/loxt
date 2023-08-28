@@ -10,7 +10,7 @@ const spyWarn = vi.spyOn(console, "warn");
 const spyError = vi.spyOn(console, "error");
 
 test("should Loxt.format string", () => {
-	expect(Loxt.format("$message", TEST)).toBe(TEST);
+	expect(Loxt.format("$0", TEST)).toBe(TEST);
 });
 
 test("should log info", () => {
