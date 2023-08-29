@@ -1,5 +1,13 @@
 # loxt
 
+## 3.12.2
+
+### Patch Changes
+
+- 9974ebf: chore(deps-dev): bump typescript from 5.0.4 to 5.2.2
+- Updated dependencies [9974ebf]
+  - @loxtjs/reporter@2.7.2
+
 ## 3.12.1
 
 ### Patch Changes
