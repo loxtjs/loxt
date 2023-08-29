@@ -1,5 +1,23 @@
 # @loxtjs/reporter
 
+## 2.7.2
+
+### Patch Changes
+
+- 9974ebf: chore(deps-dev): bump typescript from 5.0.4 to 5.2.2
+
+## 2.7.1
+
+### Patch Changes
+
+- 371c5c6: chore(deps-dev): bump vitest from 0.31.4 to 0.34.3
+
+## 2.7.0
+
+### Minor Changes
+
+- 9404e5a: chore: Deprecate @loxtjs/colors and use new format
+
 ## 2.6.5
 
 ### Patch Changes
