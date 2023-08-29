@@ -1,5 +1,11 @@
 # @loxtjs/reporter
 
+## 2.7.1
+
+### Patch Changes
+
+- 371c5c6: chore(deps-dev): bump vitest from 0.31.4 to 0.34.3
+
 ## 2.7.0
 
 ### Minor Changes
