@@ -1,5 +1,5 @@
 import { expect, test, vi } from "vitest";
-import { loxt, Loxt } from "../src";
+import { Loxt, loxt } from "../src";
 
 const TEST = "message for the test";
 

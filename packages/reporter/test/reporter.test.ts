@@ -1,5 +1,5 @@
+import { expect, test } from "vitest";
 import { Reporter } from "../src";
-import { test, expect } from "vitest";
 
 const reporter = new Reporter({
 	info: "info: $0",
